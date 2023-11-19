@@ -31,21 +31,25 @@ public class QuestionController {
     }
 
     //GET A QUESTION BY ID
+    //http://localhost:8090/question/id/{id}
     @GetMapping("/id/{id}")
     public Optional<Question> getQuestionById(@PathVariable Integer id){
         return questionService.getQuestionById(id);
     }
     //CREATE A NEW QUESTION
+    //http://localhost:8090/question/
     @PostMapping()
     public String addQuestion(@RequestBody Question question){
         return questionService.addQuestion(question);
 
     }
     //REMOVE A QUESTION BY ID
+    //http://localhost:8090/question/id
     @DeleteMapping("/{id}")
     public String deleteQuestion(@PathVariable Integer id){
         return questionService.deleteQuestion(id);
     }
+
     @PutMapping()
     public Question updateQuestion(@RequestBody Question question){
         return questionService.updateQuestion(question);
