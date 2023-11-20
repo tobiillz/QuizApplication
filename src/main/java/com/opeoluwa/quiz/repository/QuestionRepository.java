@@ -12,5 +12,5 @@ public interface QuestionRepository extends JpaRepository<Question, Integer> {
     List<Question> findByCategory(String Category);
 
 
-
+    List<Question> findByDifficultylevel(String difficultylevel);
 }

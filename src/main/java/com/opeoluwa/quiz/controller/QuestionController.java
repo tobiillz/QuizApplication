@@ -36,6 +36,12 @@ public class QuestionController {
         return questionService.getQuestionsByCategory(category);
     }
 
+    //GET A QUESTION BY DIFFICULTY LEVEL
+    @GetMapping("/difficultylevel/{difficultylevel}")
+    public ResponseEntity<List<Question>> getQuestionsByDifficultyLevel(@PathVariable String  difficultylevel){
+        return questionService.getQuestionsByDifficultylevel(difficultylevel);
+    }
+
     //GET A QUESTION BY ID
     //http://localhost:8090/question/id/{id}
 

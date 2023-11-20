@@ -31,13 +31,28 @@ public class QuestionService {
             return new ResponseEntity<>(questionRepository.findByCategory(category) , HttpStatus.OK) ;
 
         }catch (Exception e){
-
+            e.printStackTrace();
         }
         return new ResponseEntity<>(new ArrayList<>() , HttpStatus.BAD_REQUEST) ;
     }
 
+    public ResponseEntity<List<Question>> getQuestionsByDifficultylevel(String difficultylevel) {
+        try {
+
+            return new ResponseEntity<>(questionRepository.findByDifficultylevel(difficultylevel), HttpStatus.OK);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return new ResponseEntity<>(new ArrayList<>(), HttpStatus.BAD_REQUEST) ;
+    }
     public ResponseEntity<String> addQuestion(Question question) {
         questionRepository.save(question);
+        try {
+            new ResponseEntity<>("Success", HttpStatus.CREATED);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return  new ResponseEntity<>("Success", HttpStatus.CREATED);
     }
 
@@ -54,4 +69,6 @@ public class QuestionService {
     public Optional<Question> getQuestionById(Integer id) {
         return questionRepository.findById(id);
     }
+
+
 }
