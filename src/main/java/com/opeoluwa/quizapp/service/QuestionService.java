@@ -1,7 +1,7 @@
-package com.opeoluwa.quiz.service;
+package com.opeoluwa.quizapp.service;
 
-import com.opeoluwa.quiz.model.Question;
-import com.opeoluwa.quiz.repository.QuestionRepository;
+import com.opeoluwa.quizapp.model.Question;
+import com.opeoluwa.quizapp.repository.QuestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

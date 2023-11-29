@@ -1,4 +1,4 @@
-package com.opeoluwa.quiz;
+package com.opeoluwa.quizapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.opeoluwa.quiz.model;
+package com.opeoluwa.quizapp.model;
 
 import lombok.Data;
 

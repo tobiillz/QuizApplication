@@ -1,9 +1,8 @@
-package com.opeoluwa.quiz.controller;
+package com.opeoluwa.quizapp.controller;
 
-import com.opeoluwa.quiz.model.Question;
-import com.opeoluwa.quiz.service.QuestionService;
+import com.opeoluwa.quizapp.model.Question;
+import com.opeoluwa.quizapp.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,7 +21,7 @@ public class QuestionController {
 
     @GetMapping("/allquestions")
     public ResponseEntity<List<Question>> getAllQuestions(){
-//        System.out.println("Number of questions: " + questionService.getAllQuestions().size());
+        // System.out.println("Number of questions: " + questionService.getAllQuestions().size());
         // Add this line for logging
         return questionService.getAllQuestions() ;
     }
@@ -32,7 +31,7 @@ public class QuestionController {
 
     @GetMapping("category/{category}")
     public ResponseEntity<List<Question>> getQuestionsByCategory(@PathVariable String category){
-//        System.out.println("Number of questions by category: "+ questionService.getQuestionsByCategory( category).size());
+    //  System.out.println("Number of questions by category: "+ questionService.getQuestionsByCategory( category).size());
         return questionService.getQuestionsByCategory(category);
     }
 
@@ -41,23 +40,20 @@ public class QuestionController {
     public ResponseEntity<List<Question>> getQuestionsByDifficultyLevel(@PathVariable String  difficultylevel){
         return questionService.getQuestionsByDifficultylevel(difficultylevel);
     }
-
     //GET A QUESTION BY ID
     //http://localhost:8090/question/id/{id}
-
 
     @GetMapping("/id/{id}")
     public Optional<Question> getQuestionById(@PathVariable Integer id){
         return questionService.getQuestionById(id);
     }
-
     //CREATE A NEW QUESTION
     //http://localhost:8090/question/
     @PostMapping()
     public ResponseEntity<String> addQuestion(@RequestBody Question question){
         return questionService.addQuestion(question);
-
     }
+
     //REMOVE A QUESTION BY ID
     //http://localhost:8090/question/id
     @DeleteMapping("/{id}")
