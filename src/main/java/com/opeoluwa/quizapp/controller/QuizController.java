@@ -1,5 +1,6 @@
 package com.opeoluwa.quizapp.controller;
 import com.opeoluwa.quizapp.model.Question;
+import com.opeoluwa.quizapp.model.QuestionWrapper;
 import com.opeoluwa.quizapp.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,8 +22,8 @@ public class QuizController {
     }
 
     @GetMapping("get/{id}")
-    public ResponseEntity<List<Question>> getQuizQuestions(@PathVariable Integer id){
-
+    public ResponseEntity<List<QuestionWrapper>> getQuizQuestions(@PathVariable Integer id){
+        return quizService.getQuizQuestions(id);
     }
 
 
