@@ -61,8 +61,8 @@ public class QuestionController {
         return questionService.deleteQuestion(id);
     }
 
-    //NOT COMPLETED YET
-    @PutMapping()
+    //UPDATE QUESTION
+    @PutMapping("/update")
     public Question updateQuestion(@RequestBody Question question){
         return questionService.updateQuestion(question);
     }

@@ -31,7 +31,7 @@ public class QuizController {
         return quizService.getQuizQuestions(id);
     }
 
-    //API TO SUBMIT ANSWERS FOR EACH SET OF QUIZ QUESTIONS - THE ID SPECIFIES THE ID OF THE QUIZ - THE ORDER OF
+    //API TO SUBMIT ANSWERS FOR EACH SET OF QUIZ QUESTIONS - THE ID SPECIFIES THE ID OF THE QUIZ - THE ORDER OF THE QUIZ ALSO MATTERS
     //http://loclhost:8090/quiz/submit/1
     @PostMapping("submit/{id}")
     public ResponseEntity<Integer> submitQuiz(@PathVariable Integer id, @RequestBody List<Response> responses){
